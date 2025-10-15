@@ -1,0 +1,7 @@
+QwiklabsScript.pdf
+.DS_Store
+*.zip
+Terraform/.terraform.lock.hcl
+Terraform/.terraform/*
+Terraform/terraform.tfstate
+Terraform/terraform.tfstate.backup
