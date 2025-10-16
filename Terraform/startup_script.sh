@@ -2,7 +2,6 @@ echo "# Lab specific ENV vars" >> /etc/bash.bashrc
 echo "export GOOGLE_CLOUD_PROJECT=${projectid}"  >> /etc/bash.bashrc
 echo "export GOOGLE_CLOUD_LOCATION=${region}" >> /etc/bash.bashrc
 echo "export GOOGLE_MEMORYSTORE_IP=${memorystore_ip}" >> /etc/bash.bashrc
-echo "export GOOGLE_MEMORYSTORE_PASSWORD=${memorystore_password}" >> /etc/bash.bashrc
 echo "export PATH=$${PATH}:/tmp/google-cloud-sdk/bin" >> /etc/bash.bashrc
 
 

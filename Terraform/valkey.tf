@@ -16,7 +16,7 @@ resource "google_memorystore_instance" "valkey" {
   }
   zone_distribution_config {
     mode = "SINGLE_ZONE"
-    zone = "us-central1-b"
+    zone = var.gcp_zone
   }
   maintenance_policy {
     weekly_maintenance_window {

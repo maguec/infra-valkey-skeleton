@@ -37,14 +37,15 @@ resource "google_network_connectivity_service_connection_policy" "psc" {
   service_class = "gcp-memorystore"
   description   = "PSC for Memorystore"
   network       = google_compute_network.vpc.id
-  #psc_config {
-  #      subnetworks = [google_compute_subnetwork.producer_subnet.id]
-  #}
+  psc_config {
+    subnetworks = [google_compute_subnetwork.psc_subnet.id]
+  }
 }
 
-#resource "google_compute_subnetwork" "producer_subnet" {
-#  name          = "my-subnet"
-#  ip_cidr_range = "10.0.0.248/29"
-#  region        = "us-central1"
-#  network       = google_compute_network.producer_net.id
-#}
+resource "google_compute_subnetwork" "psc_subnet" {
+  project       = var.gcp_project_id
+  name          = "subnet-${random_id.server.hex}"
+  ip_cidr_range = "10.0.0.248/29"
+  region        = join("-", slice(split("-", var.gcp_zone), 0, 2))
+  network       = google_compute_network.vpc.id
+}

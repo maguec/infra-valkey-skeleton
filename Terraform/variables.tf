@@ -29,7 +29,7 @@ variable "disable_apis" {
 
 variable "instance_family" {
   type    = string
-  default = "ubuntu-2204-lts"
+  default = "ubuntu-2404-lts-amd64"
 }
 variable "instance_project_id" {
   type    = string

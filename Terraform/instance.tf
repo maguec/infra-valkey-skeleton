@@ -14,8 +14,7 @@ resource "google_compute_instance" "vm" {
     "startup_script.sh",
     {
       projectid : var.gcp_project_id,
-      memorystore_ip : "192.168.0.10",
-      memorystore_password : "mypasswerd",
+      memorystore_ip : google_memorystore_instance.valkey.endpoints[0].connections[0].psc_auto_connection[0].ip_address,
       region : join("-", slice(split("-", var.gcp_zone), 0, 2)),
     },
   )
