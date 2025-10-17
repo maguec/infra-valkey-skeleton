@@ -15,7 +15,7 @@ variable "gcp_zone" {
 
 variable "machine_type" {
   type    = string
-  default = "n1-standard-4"
+  default = "n2-standard-8"
 }
 
 variable "disable_apis" {
