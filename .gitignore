@@ -1,6 +1,7 @@
 QwiklabsScript.pdf
 .DS_Store
 *.zip
+.env
 Terraform/.terraform.lock.hcl
 Terraform/.terraform/*
 Terraform/terraform.tfstate
